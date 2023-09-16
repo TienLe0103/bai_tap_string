@@ -9,7 +9,7 @@ int main() {
     std::cin.ignore();
     std::getline(std::cin, str);
     int x = 0, y = 0;
-    int direction = 0;
+    int direction = 0; //Huong di chuyen cua robot:    Bac = 0; Dong = 1; Nam = 2; Tay = 3
     for (char comments : str) {
         switch(comments) {
             case 'G':
