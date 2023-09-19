@@ -3,21 +3,24 @@
 
 int main() {
     std::ios_base::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
+    freopen("ROBOT.INP", "r", stdin);
+    freopen("ROBOT.OUT", "w", stdout);
     int n;
     std::string str;
     std::cin >> n;
     std::cin.ignore();
     std::getline(std::cin, str);
     int x = 0, y = 0;
-    int direction = 0; //Huong di chuyen cua robot:    Bac = 0; Dong = 1; Nam = 2; Tay = 3
+    int direction = 0; 
     for (char comments : str) {
         switch(comments) {
-            case 'G':
+            case('G'):
                 if (direction == 0) y++;
                 else if (direction == 1) x++;
                 else if (direction == 2) y--;
                 else if (direction == 3) x--;
-            case 'B':
+                break;
+            case('B'):
                 if (direction == 0) {
                     y--;
                     direction = 2;
@@ -31,7 +34,8 @@ int main() {
                     x++;
                     direction = 1;
                 }
-            case 'L':
+                break;
+            case('L'):
                 if (direction == 0) {
                     x--;
                     direction = 3;
@@ -45,7 +49,8 @@ int main() {
                     y--;
                     direction = 2;
                 }
-            case 'R':
+                break;
+            case('R'):
                 if (direction == 0) {
                     x++;
                     direction = 1;
@@ -59,6 +64,7 @@ int main() {
                     y++;
                     direction = 0;
                 }
+                break;
         }
     }
     std::cout << x << ' ' << y;
